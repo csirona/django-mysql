@@ -1,0 +1,34 @@
+{% load static %}
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3>Update To Do #{{todo.id}}</h3>
+      <form>
+  <div class="mb-3">
+    <label for="InputName" class="form-label">Name</label>
+    <input type="text" class="form-control" id="InputName" value="{{todo.name}}" >
+  </div>
+  <div class="mb-3">
+    <label for="State" class="form-label">State: {% if todo.state %} Active{% else %}Inactive{% endif %}</label>
+  </div>
+  <div class="mb-3 ">
+    <a class="btn btn-warning" href="{% url 'changestate' todo.id%}" >  {% if todo.state %} Deactivate{% else %}Activate{% endif %}
+    </a>
+  </div>
+  <a id="linkUpdate" class="btn btn-primary" >Submit</a>
+</form>
+    </div>
+  
+  </div>
+
+
+
+
+  <script src="{% static 'core/js/test.js' %}"></script>
+
+
+ 
+

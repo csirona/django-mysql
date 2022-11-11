@@ -1,0 +1,50 @@
+{% load static %}
+<h2>Travel Blog</h2>
+<div class="blogThumb">
+<!--Thumbnails for blog-->
+     <div class="blogformat">
+      <img class="blogPhoto" id="myImg1" src="{% static 'core/img/bish_profile.jpg' %}"  alt="Italy">
+     </div>
+     <div class="blogformat">
+      <img class="blogPhoto" id="myImg2" src="{% static 'core/img/coding.jpg' %}"  alt="Venice">
+     </div>
+     <div class="blogformat">
+      <img class="blogPhoto" id="myImg3" src="{% static 'core/img/dd8e2234ef0ae4f30e8788cd76328ea1.jpg' %}"  alt="Philippines">
+     </div>
+
+<!-- The Modal-->
+     <div id="myModal" class="modal">
+      <span class="close">&times;</span>
+      <img class="modal-content" id="img01">
+      <div id="caption"></div>
+     </div>
+
+
+     <script>
+     // Get the modal
+     var modal = document.getElementById("myModal");
+                          
+     // Get the image and insert it inside the modal - use its "alt" text as a caption
+     var imgs = document.querySelectorAll("img");
+     var modalImg = document.getElementById("img01");
+     var captionText = document.getElementById("caption");
+     
+     // get all images and add an event listener, event target will be the clicked one
+     imgs.forEach(img=>img.addEventListener("click",
+       function (e) {
+         modal.style.display = "block";
+         modalImg.src = e.target.src;
+         captionText.innerHTML = e.target.alt;
+      }
+     ))
+
+     // Get the <span> element that closes the modal
+     var span = document.getElementsByClassName("close")[0];
+                          
+     // When the user clicks on <span> (x), close the modal
+     span.onclick = function() { 
+             modal.style.display = "none";
+             }
+     </script>
+                          
+</div>
